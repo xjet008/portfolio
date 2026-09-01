@@ -220,6 +220,18 @@ body {
   color: var(--mute);
 }
 
+.statement {
+  position: relative;
+  z-index: 2;
+  max-width: 28ch;
+  margin: 2.2rem 0 0 0.2rem;
+  font-family: Newsreader, serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-style: italic;
+  line-height: 1.12;
+  color: var(--head);
+}
+
 h1 {
   position: relative;
   z-index: 2;
