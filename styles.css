@@ -54,6 +54,18 @@ body {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
+.chrome-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ethos {
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
 .chrome-actions button {
   background: none;
   border: 0;
@@ -173,4 +185,5 @@ h1 {
   .workspace { grid-template-columns: 32px 1fr; }
   .wordmark { font-size: 28vw; bottom: 2vh; }
   .hero, .block { margin-left: 0.4rem; }
+  .ethos { display: none; }
 }
