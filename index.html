@@ -3,91 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>jet.js — fun is fuel</title>
-  <meta name="description" content="Jet. Since 2019. Linux, docs, nodes, Discord. Verified human on Ethos. Holds to zero. Remembers the useless stuff." />
+  <title>Jet — come fly with me</title>
+  <meta name="description" content="Jet. Since 2019. Linux, docs, nodes, Discord. Verified human on Ethos. Fun is fuel." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
-  <canvas class="trail" id="trail"></canvas>
-  <div class="gib" id="gib" aria-hidden="true">gib wl gib wl</div>
+  <header class="nav">
+    <a class="logo" href="#top">Jet</a>
+    <nav>
+      <a href="#story">Story</a>
+      <a href="#work">Places</a>
+      <a href="#notes">Notes</a>
+      <a class="ghost" href="https://app.ethos.network/profile/x/xjet008" target="_blank" rel="noopener">Ethos</a>
+    </nav>
+  </header>
 
-  <div class="chrome">
-    <div class="tabs">
-      <span class="tab active">jet.js</span>
-      <span class="tab ghost">notes-from-friends.md</span>
-    </div>
-    <div class="chrome-actions">
-      <a class="ethos" href="https://app.ethos.network/profile/x/xjet008" target="_blank" rel="noopener">verified human · ethos</a>
-      <button type="button" id="theme" aria-label="Toggle theme">☼</button>
-    </div>
-  </div>
+  <main id="top">
+    <section class="intro">
+      <h1>Come fly with me — a Web3 story that mostly happened in Discord, Linux, and leftover hardware.</h1>
+      <div class="pills">
+        <span class="on">Since 2019</span>
+        <span>Linux</span>
+        <span>Nodes</span>
+        <span>Discord</span>
+        <span>Verified human</span>
+      </div>
+    </section>
 
-  <div class="workspace">
-    <aside class="gutter" id="gutter" aria-hidden="true"></aside>
-    <div class="canvas">
-      <pre class="ascii" id="ascii" aria-hidden="true"></pre>
+    <section class="stage">
+      <div class="frame">
+        <div class="frame-bar"><span>jet.js</span><span>move the cursor</span></div>
+        <pre id="ascii" class="ascii" aria-hidden="true"></pre>
+      </div>
+      <p class="caption">JET / come fly with me — shatters when you hover, then rebuilds. Fun is fuel.</p>
+    </section>
 
-      <section class="hero tilt">
-        <h1>Fun is fuel.<br />Everything else is docs.</h1>
-        <p class="sub">linux / discord / nodes &nbsp;·&nbsp; verified human on ethos &nbsp;·&nbsp; holds to zero, mostly</p>
-      </section>
+    <section id="story" class="copy">
+      <p class="kicker">Story</p>
+      <p>I started poking at crypto in 2019. BCH was the first thing I touched — not a trading arc, just curiosity with extra steps. Charts put me to sleep. I would rather doomscroll, break a Linux box, or reread a doc I already forgot.</p>
+      <p>I forget important things and remember useless shit. That is not a bug report. That is the operating system.</p>
+      <p>Mining Monero and Cardano was never a business plan. Then it was nodes: verifier, validator, old PCs, laptops, dedicated boxes, shared iron. If it booted Linux, it got a job. If it didn’t, I yelled at it — or yelled <em>gib wl gib wl</em> into Discord for sport.</p>
+      <p>Most of the work never hits CT. I pick a project and go all in. I hold to zero more often than I should admit. Fun is the fuel. Profit is the rumor.</p>
+    </section>
 
-      <div class="wordmark" aria-hidden="true">Jet</div>
+    <section id="work" class="grid-wrap">
+      <p class="kicker">Places I showed up</p>
+      <div class="grid">
+        <article><h3>Monad</h3><p>Showed up, ran things, stayed in the room.</p></article>
+        <article><h3>Movement</h3><p>Another ecosystem, same habit: go all in.</p></article>
+        <article><h3>Story Protocol</h3><p>Quiet contribution. Loud only in Discord.</p></article>
+        <article><h3>Xion</h3><p>Present when it mattered. Missing from the timeline on purpose.</p></article>
+        <article><h3>0G Labs</h3><p>Infra curiosity. Docs open. Node running.</p></article>
+        <article><h3>ZetaChain</h3><p>Cross-chain mess. I like messes that boot.</p></article>
+        <article><h3>Omni Network</h3><p>One more L1/L2 in the pile I will remember at 3am.</p></article>
+        <article><h3>Plume</h3><p>Same energy. Pick it, live in it, joke through the tension.</p></article>
+        <article><h3>Hooked Protocol</h3><p>Onboarding, games, newbies. Helping people without a TED talk.</p></article>
+      </div>
+    </section>
 
-      <article class="block tilt" id="story">
-        <p class="cmt">// story, lightly roasted</p>
-        <p>I started poking at crypto in 2019. BCH was the first thing I touched — not a trading arc, just curiosity with extra steps. Charts put me to sleep. I would rather doomscroll, break a Linux box, or reread a doc I already forgot.</p>
-        <p>I forget important things and remember useless shit. That is not a bug report. That is the operating system.</p>
-        <p>Mining Monero and Cardano was never a business plan. It was an excuse to learn how blocks get made while the room got warmer. Then it was nodes. Verifier, validator, leftover PCs, laptops, dedicated boxes, shared iron. If it booted Linux, it got a job. If it didn’t, I yelled at it until it did, or I yelled <em>gib wl gib wl</em> into Discord for sport.</p>
-        <p>Most of the work never hits CT. I live in servers and Discord rooms. I pick a project and go all in until the joke runs out or the node does. I hold to zero more often than I should admit. Fun is the fuel. Profit is the rumor.</p>
-        <p>Monad, Movement, Story Protocol, Xion, 0G Labs, ZetaChain, Omni Network, Plume, Hooked Protocol, and a graveyard of L1s and L2s whose names I misplaced on purpose. I showed up, ran the thing, helped the newbies, made fun of the tension, and left the timeline cleaner than I found it. Allegedly.</p>
-      </article>
+    <section id="notes" class="notes">
+      <p class="kicker">Notes from people who have to deal with me</p>
+      <div class="quotes">
+        <blockquote>He takes contributions seriously. Picks a project and goes all in. You will find him in Discord, which is why the other apps look empty. Useful when things get tense. Never takes himself too seriously. Stays chill. Keeps people laughing.</blockquote>
+        <blockquote>Annoyingly helpful. Shows up for newbies with fun and the kind of criticism that actually makes you better instead of smaller. Funny. Talking to him is easy. Talented, which he will deny and then prove by accident.</blockquote>
+      </div>
+      <p class="aside">I did not write those. I would have made them meaner.</p>
+    </section>
+  </main>
 
-      <section class="block tilt">
-        <p class="cmt">// path</p>
-        <ul class="path">
-          <li><span>2019</span> touched BCH because I was nosy, not because I can read a chart</li>
-          <li><span>next</span> mined coins to learn, not to retire</li>
-          <li><span>then</span> nodes on whatever hardware was not on fire</li>
-          <li><span>idle</span> scrolling, Linux, docs, yelling gib wl</li>
-          <li><span>bag</span> hold to zero, remember the meme, forget the password</li>
-          <li><span>still</span> Discord &gt; timeline. verified human on ethos, somehow</li>
-        </ul>
-      </section>
-
-      <section class="block tilt">
-        <p class="cmt">// ecosystems I actually touched</p>
-        <p class="chips">Monad &nbsp; Movement &nbsp; Story Protocol &nbsp; Xion &nbsp; 0G Labs &nbsp; ZetaChain &nbsp; Omni Network &nbsp; Plume &nbsp; Hooked Protocol &nbsp; and other L1s / L2s I will remember at 3am</p>
-      </section>
-
-      <section class="block notes tilt">
-        <p class="cmt">// notes from people who have to deal with me</p>
-        <blockquote>
-          He takes contributions seriously. Picks a project and goes all in. You will find him in Discord, which is why the other apps look empty. Useful when things get tense. Never takes himself too seriously. Stays chill. Keeps people laughing.
-        </blockquote>
-        <blockquote>
-          Annoyingly helpful. Shows up for newbies with fun and the kind of criticism that actually makes you better instead of smaller. Funny. Talking to him is easy. Talented, which he will deny and then prove by accident.
-        </blockquote>
-        <p class="aside">I did not write those. I would have made them meaner.</p>
-      </section>
-
-      <section class="block contact tilt">
-        <p class="cmt">// around &nbsp;— click anywhere if you need a wl you will not get</p>
-        <p>
-          <a href="https://app.ethos.network/profile/x/xjet008" target="_blank" rel="noopener">ethos · verified human</a>
-          <span class="sep">/</span>
-          <a href="https://x.com/xjet008" target="_blank" rel="noopener">x.com/xjet008</a>
-          <span class="sep">/</span>
-          <a href="https://github.com/xjet008" target="_blank" rel="noopener">github.com/xjet008</a>
-        </p>
-      </section>
-    </div>
-  </div>
-
+  <footer>
+    <p>Jet · Rawalpindi · holds to zero, mostly</p>
+    <p>
+      <a href="https://app.ethos.network/profile/x/xjet008" target="_blank" rel="noopener">Ethos</a>
+      <a href="https://x.com/xjet008" target="_blank" rel="noopener">X</a>
+      <a href="https://github.com/xjet008" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
