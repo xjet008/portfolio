@@ -13,6 +13,7 @@ const tabs = [...document.querySelectorAll(".tab")];
 const yearChips = [...document.querySelectorAll(".year-chip")];
 const sections = ["who", "story", "school", "currently", "wallets"].map((id) => document.getElementById(id));
 const whoTitle = document.getElementById("who-title");
+const jetTrigger = document.getElementById("jet-trigger");
 let cols = 80, rows = 50, t = 0, dirty = true;
 let toastTimer;
 
@@ -175,6 +176,12 @@ window.addEventListener("scroll", () => {
   setTab(current);
   if (activeYear) setActiveYearChip(activeYear);
 }, { passive: true });
+
+// Jet popup
+jetTrigger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  popup("Please don't touch me :)" , 2200);
+});
 
 // Prompt buttons
 document.querySelectorAll(".prompt").forEach((btn) => {

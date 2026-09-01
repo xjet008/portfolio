@@ -74,7 +74,7 @@ body {
   transform: translate(-50%, -50%) scale(0.92);
   max-width: min(90vw, 56ch);
   padding: 1rem;
-  color: #ececec;
+  color: var(--head);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-weight: 400;
   font-size: 16px;
@@ -98,9 +98,9 @@ body {
   pointer-events: auto;
 }
 
-.toast a {
-  color: #ffffff;
-}
+  .toast a {
+  color: var(--head);
+  }
 
 @keyframes popupFade {
   0% {
@@ -181,7 +181,7 @@ body {
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   line-height: 20px;
-  color: #5a5a5a;
+  color: var(--mute);
   text-align: right;
   padding: 10px 7px 0 0;
   user-select: none;
@@ -242,7 +242,6 @@ h1 {
 }
 
 #who-title {
-  cursor: pointer;
   opacity: 0;
   transform: translateY(1.5rem);
   animation: titleReveal 1.1s cubic-bezier(.16, 1, .3, 1) 0.25s forwards;
@@ -262,7 +261,24 @@ h1 {
   }
 }
 
-#who-title:focus-visible {
+#jet-trigger {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.12em;
+}
+
+#jet-trigger:hover {
+  color: var(--mute);
+}
+
+#jet-trigger:focus-visible {
   outline: 1px dashed var(--mute);
   outline-offset: 6px;
 }
@@ -419,13 +435,14 @@ h1 {
 }
 
 .close {
+  margin-top: 2.2rem;
   font-family: Syne, sans-serif;
   font-weight: 700;
   color: var(--head);
 }
 
 .links {
-  margin-top: 2rem;
+  margin-top: 1.4rem;
   display: flex;
   gap: 1.2rem;
   font-family: "IBM Plex Mono", monospace;
@@ -486,7 +503,7 @@ h1 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   line-height: 1.5;
-  color: #6f6f6f;
+  color: var(--mute);
 }
 
 .wallets {
@@ -498,8 +515,8 @@ h1 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
   line-height: 1.45;
-  color: #b8b0a4;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+  color: var(--ink);
+  text-shadow: none;
   overflow-wrap: anywhere;
 }
 
@@ -509,7 +526,7 @@ h1 {
 
 .wallets span,
 .wallet-title {
-  color: #f1ece5;
+  color: var(--head);
 }
 
 .wallet-title {
