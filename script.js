@@ -93,7 +93,7 @@ function popup(html) {
   toastTimer = setTimeout(() => {
     toast.classList.remove("show");
     dim.classList.remove("on");
-  }, 3000);
+  }, 3350);
 }
 
 function setTab(id) {
