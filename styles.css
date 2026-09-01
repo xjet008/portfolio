@@ -71,21 +71,27 @@ body {
   top: 44%;
   transform: translate(-50%, -50%);
   width: auto;
-  max-width: min(82vw, 42ch);
+  max-width: min(90vw, 56ch);
   background: none;
   border: 0;
   padding: 0;
   color: #ececec;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  line-height: 1.6;
-  text-align: center;
-  white-space: pre-wrap;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  text-align: left;
+  white-space: pre;
   opacity: 0;
   pointer-events: none;
   z-index: 40;
+}
+
+.toast pre {
+  margin: 0;
+  font: inherit;
+  white-space: pre;
 }
 
 .toast.show {
