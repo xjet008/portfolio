@@ -274,9 +274,15 @@ h1 {
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
-.who-egg:hover {
+.who-egg:hover,
+.who-egg:focus-visible {
   color: var(--ink);
   transform: translateX(3px);
+}
+
+.who-egg:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
 }
 
 .close {
