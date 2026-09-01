@@ -10,11 +10,11 @@ const B = "come fly with me";
 const DEBRIS = ["/", "\\", "*", "+", "-", "#"];
 const broken = new Map();
 const tabs = [...document.querySelectorAll(".tab")];
-const sections = ["who", "story", "school"].map((id) => document.getElementById(id));
-  const whoTitle = document.getElementById("who-title");
-  let cols = 80, rows = 50, t = 0, dirty = true;
-  let toastTimer;
-
+const yearChips = [...document.querySelectorAll(".year-chip")];
+const sections = ["who", "story", "school", "currently", "wallets"].map((id) => document.getElementById(id));
+const whoTitle = document.getElementById("who-title");
+let cols = 80, rows = 50, t = 0, dirty = true;
+let toastTimer;
 
 function sizeGrid() {
   const main = document.querySelector(".main");
@@ -107,6 +107,13 @@ function setTab(id) {
   tabs.forEach((tab) => tab.classList.toggle("on", tab.getAttribute("href") === "#" + id));
 }
 
+function setActiveYearChip(year) {
+  yearChips.forEach((chip) => {
+    chip.classList.toggle("active", chip.dataset.year === year);
+  });
+}
+
+// Tab navigation with smooth scroll
 tabs.forEach((tab) => {
   tab.addEventListener("click", (e) => {
     e.preventDefault();
@@ -119,15 +126,57 @@ tabs.forEach((tab) => {
   });
 });
 
+// Year chip navigation
+yearChips.forEach((chip) => {
+  chip.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const year = chip.dataset.year;
+    const yearElement = document.getElementById(`y-${year}`);
+    if (!yearElement) return;
+    
+    // Play subtle feedback
+    popup(`${year} — time travel in progress`, 800);
+    
+    // Set story tab as active
+    setTab("story");
+    
+    // Smooth scroll to year section
+    window.scrollTo({ 
+      top: yearElement.getBoundingClientRect().top + window.scrollY - 52, 
+      behavior: "smooth" 
+    });
+    
+    // Update active chip
+    setActiveYearChip(year);
+  });
+});
+
+// Scroll event to update active tab and year chip
 window.addEventListener("scroll", () => {
   const y = window.scrollY + 80;
   let current = "who";
+  let activeYear = null;
+  
   sections.forEach((sec) => {
     if (sec && sec.offsetTop <= y) current = sec.id;
   });
+  
+  // Detect active year when in story section
+  if (current === "story") {
+    const storyYears = document.querySelectorAll(".story-year");
+    storyYears.forEach((yearEl) => {
+      if (yearEl.offsetTop <= y) {
+        activeYear = yearEl.id.replace("y-", "");
+      }
+    });
+  }
+  
   setTab(current);
+  if (activeYear) setActiveYearChip(activeYear);
 }, { passive: true });
 
+// Prompt buttons
 document.querySelectorAll(".prompt").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -135,11 +184,13 @@ document.querySelectorAll(".prompt").forEach((btn) => {
   });
 });
 
+// Theme toggle
 document.getElementById("theme").addEventListener("click", (e) => {
   e.stopPropagation();
   document.documentElement.classList.toggle("light");
 });
 
+// Cursor tracking and shattering
 window.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
@@ -151,7 +202,7 @@ window.addEventListener("click", (e) => {
   shatter(e.clientX, e.clientY);
 });
 
-
+// Initialize
 sizeGrid();
 requestAnimationFrame(loop);
 window.addEventListener("resize", sizeGrid);
