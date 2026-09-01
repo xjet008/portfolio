@@ -8,6 +8,8 @@ const A = "JET";
 const B = "come fly with me";
 const DEBRIS = ["/", "\\", "*", "+", "-", "#"];
 const broken = new Map();
+const tabs = [...document.querySelectorAll(".tab")];
+const sections = ["who", "story", "school"].map((id) => document.getElementById(id));
 let cols = 80, rows = 50, t = 0, dirty = true;
 
 function sizeGrid() {
@@ -37,9 +39,9 @@ function glyph(r, c) {
 }
 
 function shatter(x, y) {
-  const main = document.querySelector(".main").getBoundingClientRect();
-  const cc = (x - main.left) / CELL_W;
-  const rr = (y - main.top + document.querySelector(".main").scrollTop) / CELL_H;
+  const box = document.querySelector(".main").getBoundingClientRect();
+  const cc = (x - box.left) / CELL_W;
+  const rr = (y - box.top) / CELL_H;
   const now = performance.now();
   const radius = 3.2;
   for (let r = Math.floor(rr - radius); r <= rr + radius; r++) {
@@ -78,6 +80,32 @@ function loop(now) {
   if (dirty || ((now / 80) | 0) !== (((now - 16) / 80) | 0)) render();
   requestAnimationFrame(loop);
 }
+
+function setTab(id) {
+  tabs.forEach((tab) => tab.classList.toggle("on", tab.getAttribute("href") === "#" + id));
+}
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const id = tab.getAttribute("href").slice(1);
+    const el = document.getElementById(id);
+    if (!el) return;
+    setTab(id);
+    const top = el.getBoundingClientRect().top + window.scrollY - 52;
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});
+
+window.addEventListener("scroll", () => {
+  const y = window.scrollY + 80;
+  let current = "who";
+  sections.forEach((sec) => {
+    if (sec && sec.offsetTop <= y) current = sec.id;
+  });
+  setTab(current);
+}, { passive: true });
 
 document.getElementById("theme").addEventListener("click", (e) => {
   e.stopPropagation();
