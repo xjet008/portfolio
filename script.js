@@ -14,6 +14,16 @@ const yearChips = [...document.querySelectorAll(".year-chip")];
 const sections = ["who", "story", "school", "currently", "wallets"].map((id) => document.getElementById(id));
 const whoTitle = document.getElementById("who-title");
 const jetTrigger = document.getElementById("jet-trigger");
+const dontClick = document.getElementById("dont-click");
+let clickRound = 0;
+const clickMessages = [
+  "▶ DON'T CLICK",
+  "▶ I SAID DON'T CLICK",
+  "▶ BRO, STOP.",
+  "▶ WHY ARE YOU STILL CLICKING?",
+  "▶ LAST WARNING. 😭",
+  "▶ OK FINE. FOLLOW ME ON X →"
+];
 let cols = 80, rows = 50, t = 0, dirty = true;
 let toastTimer;
 
@@ -169,6 +179,23 @@ window.addEventListener("scroll", () => {
   // resurrect an old year highlight.
   if (current !== "story") setActiveYearChip(null);
 }, { passive: true });
+
+// Don't-click button: fade out, wait, then return with the next message.
+dontClick.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  if (clickRound === clickMessages.length - 1) {
+    window.open("https://x.com/xjet008", "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  clickRound += 1;
+  dontClick.classList.add("is-gone");
+  window.setTimeout(() => {
+    dontClick.textContent = clickMessages[clickRound];
+    dontClick.classList.remove("is-gone");
+  }, 2000);
+});
 
 // Jet popup
 jetTrigger.addEventListener("click", (e) => {
