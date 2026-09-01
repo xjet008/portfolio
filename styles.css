@@ -419,13 +419,14 @@ h1 {
 }
 
 .close {
+  margin-top: 2.2rem;
   font-family: Syne, sans-serif;
   font-weight: 700;
   color: var(--head);
 }
 
 .links {
-  margin-top: 2rem;
+  margin-top: 1.4rem;
   display: flex;
   gap: 1.2rem;
   font-family: "IBM Plex Mono", monospace;
