@@ -149,7 +149,6 @@ window.addEventListener("mousemove", (e) => {
 window.addEventListener("click", (e) => {
   if (e.target.closest("a,button,.toast")) return;
   shatter(e.clientX, e.clientY);
-  popup("Come Fly With Me");
 });
 
 
