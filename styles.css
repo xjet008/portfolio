@@ -58,7 +58,7 @@ body {
   opacity: 0;
   pointer-events: none;
   z-index: 35;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease 0.35s;
 }
 
 .dim.on {
@@ -89,7 +89,7 @@ body {
 }
 
 .toast.show {
-  animation: pop 3s ease-out;
+  animation: pop 3s ease-out 0.35s both;
   pointer-events: auto;
 }
 
