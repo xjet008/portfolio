@@ -133,7 +133,9 @@ yearChips.forEach((chip) => {
     e.preventDefault();
     e.stopPropagation();
     const year = chip.dataset.year;
-    const yearElement = document.getElementById(`y-${year}`);
+    // 2023 and 2024 share one story entry, so both chips target that entry.
+    const targetYear = year === "2024" ? "2023" : year;
+    const yearElement = document.getElementById(`y-${targetYear}`);
     if (!yearElement) return;
     
     // Play subtle feedback
