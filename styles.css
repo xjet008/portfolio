@@ -267,6 +267,55 @@ h1 {
   outline-offset: 6px;
 }
 
+/* Year Chips */
+.year-chips {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.year-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 28px;
+  padding: 0 8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+  background: transparent;
+  border: 1px solid var(--mute);
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.year-chip:hover {
+  color: var(--head);
+  border-color: var(--head);
+  transform: translateY(-2px);
+}
+
+.year-chip:focus-visible {
+  outline: 2px solid var(--head);
+  outline-offset: 2px;
+  border-color: var(--head);
+}
+
+.year-chip.active {
+  background: var(--head);
+  color: var(--bg);
+  border-color: var(--head);
+}
+
 .copy {
   position: relative;
   z-index: 2;
@@ -294,6 +343,50 @@ h1 {
   border-bottom: 1px solid var(--mute);
   padding-bottom: 4px;
   margin-bottom: 1rem;
+}
+
+.label-sub {
+  display: inline-flex;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+  margin: 0.2rem 0 1.6rem 0.3rem;
+}
+
+/* Story Year Sections */
+.story-year {
+  position: relative;
+  margin-bottom: 3rem;
+  scroll-margin-top: 56px;
+}
+
+.year-heading {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--head);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--mute);
+  text-transform: uppercase;
+}
+
+/* Code Block Styling */
+.code-block {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--mute);
+  background: transparent;
+  padding: 0;
+  margin: 1rem 0.3rem;
+  overflow-x: auto;
+  white-space: pre;
+  border: none;
 }
 
 .who-egg-wrap {
@@ -460,5 +553,15 @@ h1 {
 
   .prompt {
     font-size: 13px;
+  }
+
+  .year-chips {
+    gap: 4px;
+  }
+
+  .year-chip {
+    min-width: 36px;
+    height: 24px;
+    font-size: 10px;
   }
 }
