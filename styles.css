@@ -346,7 +346,7 @@ h1 {
 .rail {
   position: fixed;
   right: 2.5vw;
-  top: 40%;
+  top: 45%;
   transform: translateY(-20%);
   z-index: 36;
   width: 220px;
