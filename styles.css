@@ -5,7 +5,7 @@
   --muted: #8a8a8a;
   --line: #3f3f3f;
   --soft: #bdbdbd;
-  --ascii: #4a4a4a;
+  --ascii: #5a5a5a;
 }
 :root.light {
   --bg: #ececec;
@@ -14,7 +14,7 @@
   --muted: #6a6a6a;
   --line: #c8c8c8;
   --soft: #3a3a3a;
-  --ascii: #c2c2c2;
+  --ascii: #b5b5b5;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { min-height: 100%; cursor: none; }
@@ -54,11 +54,8 @@ a, button { cursor: none; }
   opacity: 0;
   pointer-events: none;
   z-index: 20;
-  text-shadow: 0 0 40px rgba(0,0,0,.35);
 }
-.gib.show {
-  animation: yell .9s ease-out;
-}
+.gib.show { animation: yell .9s ease-out; }
 @keyframes yell {
   0% { opacity: 0; transform: translate(-50%, -40%) scale(.7); }
   25% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
@@ -82,7 +79,7 @@ a, button { cursor: none; }
   border: 1px solid var(--line); padding: 2px 8px; border-radius: 999px;
 }
 .chrome-actions button { background: none; border: 0; color: var(--ink); font-size: 16px; }
-.workspace { display: grid; grid-template-columns: 48px 1fr; min-height: calc(100vh - 36px); }
+.workspace { display: grid; grid-template-columns: 48px 1fr; min-height: calc(100vh - 36px); position: relative; z-index: 1; }
 .gutter {
   font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted);
   text-align: right; padding: 12px 8px 40px 0; line-height: 22px;
@@ -90,9 +87,19 @@ a, button { cursor: none; }
 }
 .canvas { position: relative; padding: 18px 4vw 18vh; min-height: 100%; }
 .ascii {
-  position: absolute; inset: 0; padding: 12px 0 0 8px; margin: 0;
-  font-family: "IBM Plex Mono", monospace; font-size: 12px; line-height: 22px;
-  color: var(--ascii); white-space: pre; pointer-events: none; overflow: hidden;
+  position: fixed;
+  top: 36px; left: 0; right: 0; bottom: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: var(--ascii);
+  white-space: pre;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
 }
 .hero { position: relative; z-index: 1; max-width: 16ch; margin: 2.2rem 0 0 1.2rem; }
 h1 {
@@ -104,7 +111,7 @@ h1 {
   position: absolute; right: -2vw; bottom: 4vh;
   font-size: clamp(7rem, 22vw, 16rem); font-weight: 800;
   letter-spacing: -0.07em; line-height: 0.78; color: var(--soft);
-  opacity: 0.5; z-index: 0; pointer-events: none; user-select: none;
+  opacity: 0.28; z-index: 0; pointer-events: none; user-select: none;
 }
 .block {
   position: relative; z-index: 1; max-width: 62ch;
