@@ -1,18 +1,18 @@
 :root {
-  --bg: #2b2b2b;
-  --bar: #3a3a3a;
+  --bg: #1f1f1f;
+  --bar: #323232;
   --ink: #d2d2d2;
   --mute: #8d8d8d;
-  --ascii: #4d4d4d;
+  --ascii: #3a3a3a;
   --head: #c8c8c8;
-  --mark: #bdbdbd;
+  --mark: #9a9a9a;
 }
 :root.light {
   --bg: #e8e8e8;
   --bar: #d6d6d6;
   --ink: #2a2a2a;
   --mute: #6a6a6a;
-  --ascii: #b7b7b7;
+  --ascii: #b0b0b0;
   --head: #2f2f2f;
   --mark: #3a3a3a;
 }
@@ -24,29 +24,40 @@ body { font-family: Inter, system-ui, sans-serif; overflow-x: hidden; }
   position: fixed; width: 10px; height: 10px; border: 1px solid var(--head);
   border-radius: 50%; pointer-events: none; z-index: 50; transform: translate(-50%,-50%);
 }
+.dim {
+  position: fixed; inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 35;
+  transition: opacity .2s ease;
+}
+.dim.on { opacity: 0.3; }
 .toast {
   position: fixed; left: 50%; top: 42%;
   transform: translate(-50%, -50%);
-  max-width: min(80vw, 28rem);
-  padding: 1rem 1.3rem;
-  background: var(--bar);
-  border: 1px solid #555;
+  max-width: min(86vw, 18ch);
+  background: none;
+  border: 0;
+  padding: 0;
   color: var(--head);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 15px;
-  line-height: 1.5;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 7vw, 5.4rem);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
   text-align: center;
   opacity: 0;
   pointer-events: none;
   z-index: 40;
 }
-.toast.show { animation: pop 1.8s ease-out; pointer-events: auto; }
+.toast.show { animation: pop 3s ease-out; pointer-events: auto; }
 .toast a { color: var(--head); }
 @keyframes pop {
-  0% { opacity: 0; transform: translate(-50%, -40%); }
-  12% { opacity: 1; transform: translate(-50%, -50%); }
-  75% { opacity: 1; transform: translate(-50%, -50%); }
-  100% { opacity: 0; transform: translate(-50%, -58%); }
+  0% { opacity: 0; transform: translate(-50%, -42%) scale(.96); }
+  8% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  82% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -56%) scale(1.02); }
 }
 .chrome {
   position: sticky; top: 0; z-index: 10;
@@ -66,13 +77,13 @@ body { font-family: Inter, system-ui, sans-serif; overflow-x: hidden; }
 .page { display: grid; grid-template-columns: 42px 1fr; min-height: calc(100vh - 34px); }
 .gutter {
   font-family: "IBM Plex Mono", monospace; font-size: 11px; line-height: 20px;
-  color: #6b6b6b; text-align: right; padding: 10px 7px 0 0; user-select: none;
+  color: #5a5a5a; text-align: right; padding: 10px 7px 0 0; user-select: none;
 }
 .main { position: relative; min-height: calc(100vh - 34px); padding: 8px 3vw 22vh; overflow: hidden; }
 .ascii {
   position: absolute; inset: 0; margin: 0; padding: 10px 0 0 6px;
   font-family: "IBM Plex Mono", monospace; font-size: 12px; line-height: 20px;
-  color: var(--ascii); white-space: pre; pointer-events: none; overflow: hidden;
+  color: var(--ascii); opacity: 0.7; white-space: pre; pointer-events: none; overflow: hidden;
 }
 .hook {
   position: relative; z-index: 2; max-width: 46ch; margin: 1.4rem 0 0 .3rem;
@@ -100,32 +111,16 @@ h1 {
 }
 .links a { color: var(--ink); }
 .rail {
-  position: fixed;
-  right: 2.2vw;
-  top: 42%;
-  transform: translateY(-20%);
-  z-index: 6;
-  width: min(28vw, 240px);
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
+  position: fixed; right: 2.2vw; top: 42%; transform: translateY(-20%);
+  z-index: 6; width: min(28vw, 240px); display: flex; flex-direction: column; gap: 1.1rem;
 }
 .prompt {
-  background: none; border: 0; padding: 0;
-  text-align: left;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 12px;
-  line-height: 1.45;
-  color: var(--mute);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  background: none; border: 0; padding: 0; text-align: left;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; line-height: 1.45;
+  color: var(--mute); text-decoration: underline; text-underline-offset: 3px;
 }
 .prompt:hover { color: var(--ink); }
-.thanks {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  color: #6f6f6f;
-}
+.thanks { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: #6f6f6f; }
 .mark {
   position: absolute; right: -3vw; bottom: -4vh; z-index: 1;
   font-size: clamp(8rem, 24vw, 18rem); font-weight: 800;
