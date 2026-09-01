@@ -24,13 +24,30 @@ body { font-family: Inter, system-ui, sans-serif; overflow-x: hidden; }
   position: fixed; width: 10px; height: 10px; border: 1px solid var(--head);
   border-radius: 50%; pointer-events: none; z-index: 50; transform: translate(-50%,-50%);
 }
-.gib {
-  position: fixed; left: 50%; top: 40%; transform: translate(-50%,-50%);
-  font-weight: 800; font-size: clamp(2rem, 8vw, 6rem); color: var(--head);
-  opacity: 0; pointer-events: none; z-index: 40;
+.toast {
+  position: fixed; left: 50%; top: 42%;
+  transform: translate(-50%, -50%);
+  max-width: min(80vw, 28rem);
+  padding: 1rem 1.3rem;
+  background: var(--bar);
+  border: 1px solid #555;
+  color: var(--head);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 40;
 }
-.gib.show { animation: yell .85s ease-out; }
-@keyframes yell { 0%{opacity:0} 20%{opacity:1} 100%{opacity:0} }
+.toast.show { animation: pop 1.8s ease-out; pointer-events: auto; }
+.toast a { color: var(--head); }
+@keyframes pop {
+  0% { opacity: 0; transform: translate(-50%, -40%); }
+  12% { opacity: 1; transform: translate(-50%, -50%); }
+  75% { opacity: 1; transform: translate(-50%, -50%); }
+  100% { opacity: 0; transform: translate(-50%, -58%); }
+}
 .chrome {
   position: sticky; top: 0; z-index: 10;
   height: 34px; display: flex; align-items: center; justify-content: space-between;
@@ -82,12 +99,43 @@ h1 {
   font-family: "IBM Plex Mono", monospace; font-size: 13px;
 }
 .links a { color: var(--ink); }
+.rail {
+  position: fixed;
+  right: 2.2vw;
+  top: 42%;
+  transform: translateY(-20%);
+  z-index: 6;
+  width: min(28vw, 240px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.prompt {
+  background: none; border: 0; padding: 0;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--mute);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prompt:hover { color: var(--ink); }
+.thanks {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: #6f6f6f;
+}
 .mark {
   position: absolute; right: -3vw; bottom: -4vh; z-index: 1;
   font-size: clamp(8rem, 24vw, 18rem); font-weight: 800;
   letter-spacing: -0.07em; line-height: 0.78; color: var(--mark); pointer-events: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .cursor { display: none; }
   .ethos { display: none; }
+  .rail {
+    position: relative; right: auto; top: auto; transform: none;
+    width: auto; max-width: 52ch; margin: 3rem 0 0 .3rem;
+  }
 }
