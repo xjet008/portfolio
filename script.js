@@ -2,6 +2,7 @@ const ascii = document.getElementById("ascii");
 const gutter = document.getElementById("gutter");
 const cursor = document.getElementById("cursor");
 const toast = document.getElementById("toast");
+const dim = document.getElementById("dim");
 const CELL_W = 7.3;
 const CELL_H = 20;
 const A = "JET";
@@ -87,8 +88,12 @@ function popup(html) {
   toast.classList.remove("show");
   void toast.offsetWidth;
   toast.classList.add("show");
+  dim.classList.add("on");
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+    dim.classList.remove("on");
+  }, 3000);
 }
 
 function setTab(id) {
