@@ -284,10 +284,16 @@ h1 {
 }
 
 .label {
+  display: inline-flex;
+  align-items: center;
   font-family: "IBM Plex Mono", monospace;
   font-size: 13px;
-  color: var(--mute);
-  margin-bottom: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--head);
+  border-bottom: 1px solid var(--mute);
+  padding-bottom: 4px;
+  margin-bottom: 1rem;
 }
 
 .who-egg-wrap {
