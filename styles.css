@@ -62,7 +62,7 @@ body {
 }
 
 .dim.on {
-  opacity: 0.42;
+  opacity: 0.78;
 }
 
 .toast {
@@ -75,7 +75,7 @@ body {
   background: none;
   border: 0;
   padding: 0;
-  color: #b8b8b8;
+  color: #ececec;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-weight: 400;
   font-size: 13px;
@@ -94,7 +94,7 @@ body {
 }
 
 .toast a {
-  color: #d2d2d2;
+  color: #ffffff;
 }
 
 @keyframes pop {
