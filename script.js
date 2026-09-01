@@ -123,6 +123,7 @@ tabs.forEach((tab) => {
     const el = document.getElementById(id);
     if (!el) return;
     setTab(id);
+    setActiveYearChip(null);
     window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 52, behavior: "smooth" });
   });
 });
@@ -159,24 +160,14 @@ yearChips.forEach((chip) => {
 window.addEventListener("scroll", () => {
   const y = window.scrollY + 80;
   let current = "who";
-  let activeYear = null;
-  
   sections.forEach((sec) => {
     if (sec && sec.offsetTop <= y) current = sec.id;
   });
   
-  // Detect active year when in story section
-  if (current === "story") {
-    const storyYears = document.querySelectorAll(".story-year");
-    storyYears.forEach((yearEl) => {
-      if (yearEl.offsetTop <= y) {
-        activeYear = yearEl.id.replace("y-", "");
-      }
-    });
-  }
-  
   setTab(current);
-  if (activeYear) setActiveYearChip(activeYear);
+  // Year selection is explicit: scrolling or switching sections must not
+  // resurrect an old year highlight.
+  if (current !== "story") setActiveYearChip(null);
 }, { passive: true });
 
 // Jet popup
