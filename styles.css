@@ -231,7 +231,7 @@ body {
   position: relative;
   margin: 0;
   padding: 0.55rem 0.8rem;
-  border: 1px solid var(--mute);
+  border: 0;
   background: transparent;
   color: var(--ink);
   font-family: "IBM Plex Mono", monospace;
