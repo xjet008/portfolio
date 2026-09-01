@@ -1,21 +1,21 @@
 :root {
-  --bg: #1f1f1f;
-  --bar: #323232;
-  --ink: #d2d2d2;
-  --mute: #8d8d8d;
-  --ascii: #3a3a3a;
-  --head: #c8c8c8;
-  --mark: #9a9a9a;
+  --bg: #1b1916;
+  --bar: #2c2924;
+  --ink: #e8ddd0;
+  --mute: #a89888;
+  --ascii: #3d3832;
+  --head: #f4ece3;
+  --mark: #8f8578;
 }
 
 :root.light {
-  --bg: #e8e8e8;
-  --bar: #d6d6d6;
-  --ink: #2a2a2a;
-  --mute: #6a6a6a;
-  --ascii: #b0b0b0;
-  --head: #2f2f2f;
-  --mark: #3a3a3a;
+  --bg: #f3eee7;
+  --bar: #e4ddd3;
+  --ink: #2a241c;
+  --mute: #6f6458;
+  --ascii: #c9c0b4;
+  --head: #1c1814;
+  --mark: #3a342c;
 }
 
 * {
@@ -36,7 +36,7 @@ body {
 }
 
 body {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Newsreader, Georgia, serif;
   overflow-x: hidden;
 }
 
@@ -231,6 +231,7 @@ h1 {
   z-index: 2;
   margin: 1rem 0 0 0.2rem;
   max-width: 12ch;
+  font-family: Syne, sans-serif;
   font-size: clamp(2.8rem, 7vw, 5.6rem);
   font-weight: 800;
   letter-spacing: -0.055em;
@@ -243,8 +244,9 @@ h1 {
   z-index: 2;
   max-width: 52ch;
   margin: 3.2rem 0 0 0.3rem;
-  font-size: 1.06rem;
-  line-height: 1.7;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.12rem;
+  line-height: 1.72;
   color: var(--ink);
   scroll-margin-top: 56px;
 }
@@ -261,7 +263,8 @@ h1 {
 }
 
 .close {
-  font-weight: 600;
+  font-family: Syne, sans-serif;
+  font-weight: 700;
   color: var(--head);
 }
 
@@ -335,6 +338,7 @@ h1 {
   right: -3vw;
   bottom: -4vh;
   z-index: 1;
+  font-family: Syne, sans-serif;
   font-size: clamp(8rem, 24vw, 18rem);
   font-weight: 800;
   letter-spacing: -0.07em;
