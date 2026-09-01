@@ -83,8 +83,24 @@ function loop(now) {
   requestAnimationFrame(loop);
 }
 
+function asCode(html) {
+  const hold = document.createElement("div");
+  hold.innerHTML = html;
+  const plain = hold.textContent.trim();
+  const width = Math.max(plain.length + 8, 26);
+  const bar = "+" + "-".repeat(width) + "+";
+  const gap = " ".repeat(Math.max(0, width - plain.length - 6));
+  return (
+    "<pre>" +
+    bar + "\n" +
+    "| // " + html + gap + "|\n" +
+    bar +
+    "</pre>"
+  );
+}
+
 function popup(html) {
-  toast.innerHTML = "// " + html;
+  toast.innerHTML = asCode(html);
   toast.classList.remove("show");
   void toast.offsetWidth;
   toast.classList.add("show");
