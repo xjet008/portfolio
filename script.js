@@ -3,6 +3,7 @@ const gutter = document.getElementById("gutter");
 const cursor = document.getElementById("cursor");
 const toast = document.getElementById("toast");
 const dim = document.getElementById("dim");
+const whoEgg = document.getElementById("whoEgg");
 const CELL_W = 7.3;
 const CELL_H = 20;
 const A = "JET";
@@ -153,6 +154,13 @@ document.getElementById("theme").addEventListener("click", (e) => {
   document.documentElement.classList.toggle("light");
 });
 
+if (whoEgg) {
+  whoEgg.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popup("Jet.exe unlocked");
+  });
+}
+
 window.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
@@ -160,7 +168,7 @@ window.addEventListener("mousemove", (e) => {
 });
 
 window.addEventListener("click", (e) => {
-  if (e.target.closest("a,button,.toast")) return;
+  if (e.target.closest("a,button,.toast,#whoEgg")) return;
   shatter(e.clientX, e.clientY);
   popup("Come Fly With Me");
 });
