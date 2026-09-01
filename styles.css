@@ -74,7 +74,7 @@ body {
   transform: translate(-50%, -50%) scale(0.92);
   max-width: min(90vw, 56ch);
   padding: 1rem;
-  color: #ececec;
+  color: var(--head);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-weight: 400;
   font-size: 16px;
@@ -98,9 +98,9 @@ body {
   pointer-events: auto;
 }
 
-.toast a {
-  color: #ffffff;
-}
+  .toast a {
+  color: var(--head);
+  }
 
 @keyframes popupFade {
   0% {
@@ -181,7 +181,7 @@ body {
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   line-height: 20px;
-  color: #5a5a5a;
+  color: var(--mute);
   text-align: right;
   padding: 10px 7px 0 0;
   user-select: none;
@@ -503,7 +503,7 @@ h1 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   line-height: 1.5;
-  color: #6f6f6f;
+  color: var(--mute);
 }
 
 .wallets {
@@ -515,8 +515,8 @@ h1 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
   line-height: 1.45;
-  color: #b8b0a4;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+  color: var(--ink);
+  text-shadow: none;
   overflow-wrap: anywhere;
 }
 
@@ -526,7 +526,7 @@ h1 {
 
 .wallets span,
 .wallet-title {
-  color: #f1ece5;
+  color: var(--head);
 }
 
 .wallet-title {
