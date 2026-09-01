@@ -390,6 +390,33 @@ h1 {
   color: #6f6f6f;
 }
 
+.wallets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 0.4rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--mute);
+  overflow-wrap: anywhere;
+}
+
+.wallets p {
+  margin: 0;
+}
+
+.wallets span,
+.wallet-title {
+  color: var(--ink);
+}
+
+.wallet-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .mark {
   position: absolute;
   right: -3vw;
