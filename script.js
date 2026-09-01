@@ -15,8 +15,15 @@ const sections = ["who", "story", "school", "currently", "wallets"].map((id) => 
 const whoTitle = document.getElementById("who-title");
 const jetTrigger = document.getElementById("jet-trigger");
 const dontClick = document.getElementById("dont-click");
-const replayClick = document.getElementById("replay-click");
 let clickRound = 0;
+const clickMessages = [
+  "▶ DON'T CLICK",
+  "▶ I SAID DON'T CLICK",
+  "▶ BRO, STOP.",
+  "▶ WHY ARE YOU STILL CLICKING?",
+  "▶ LAST WARNING. 😭",
+  "▶ OK FINE. FOLLOW ME ON X →"
+];
 let cols = 80, rows = 50, t = 0, dirty = true;
 let toastTimer;
 
@@ -173,20 +180,21 @@ window.addEventListener("scroll", () => {
   if (current !== "story") setActiveYearChip(null);
 }, { passive: true });
 
-// Don't-click button: each replay gets a new reply, then disappears.
+// Don't-click button: fade out, wait, then return with the next message.
 dontClick.addEventListener("click", (e) => {
   e.stopPropagation();
-  dontClick.textContent = clickRound === 0 ? "I knew it" : "PLEASE DON'T";
+
+  if (clickRound === clickMessages.length - 1) {
+    window.open("https://x.com/xjet008", "_blank", "noopener,noreferrer");
+    return;
+  }
+
   clickRound += 1;
   dontClick.classList.add("is-gone");
-  replayClick.classList.add("is-visible");
-});
-
-replayClick.addEventListener("click", (e) => {
-  e.stopPropagation();
-  dontClick.textContent = "DON'T CLICK";
-  dontClick.classList.remove("is-gone");
-  replayClick.classList.remove("is-visible");
+  window.setTimeout(() => {
+    dontClick.textContent = clickMessages[clickRound];
+    dontClick.classList.remove("is-gone");
+  }, 2000);
 });
 
 // Jet popup
