@@ -21,7 +21,7 @@ const clickMessages = [
   "▶ I SAID DON'T CLICK",
   "▶ BRO, STOP.",
   "▶ WHY ARE YOU STILL CLICKING?",
-  "▶ LAST WARNING. 😭",
+  "▶ LAST WARNING.",
   "▶ OK FINE. FOLLOW ME ON X →"
 ];
 let cols = 80, rows = 50, t = 0, dirty = true;
