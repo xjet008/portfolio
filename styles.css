@@ -241,54 +241,11 @@ h1 {
   overflow: hidden;
 }
 
-.runup-kicker,
-.runup-status {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mute);
-  opacity: 0;
-  animation: runupFade 0.7s ease 0.25s forwards;
-}
-
-.runup-status {
-  justify-content: space-between;
-  width: min(20rem, 70vw);
-  margin-top: 0.7rem;
-  animation-delay: 1.25s;
-}
-
-.runup-status strong {
-  color: var(--head);
-  font-weight: 500;
-}
-
-.runup-line {
-  width: 0;
-  height: 1px;
-  margin-top: 0.9rem;
-  background: var(--head);
-  opacity: 0.7;
-  animation: runupLine 1s cubic-bezier(.16, 1, .3, 1) 0.7s forwards;
-}
-
 #who-title {
   cursor: pointer;
   opacity: 0;
   transform: translateY(1.5rem);
-  animation: titleReveal 1.1s cubic-bezier(.16, 1, .3, 1) 1.65s forwards;
-}
-
-@keyframes runupFade {
-  to { opacity: 1; }
-}
-
-@keyframes runupLine {
-  to { width: min(32rem, 82vw); }
+  animation: titleReveal 1.1s cubic-bezier(.16, 1, .3, 1) 0.25s forwards;
 }
 
 @keyframes titleReveal {
@@ -298,11 +255,10 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .runup-kicker, .runup-line, .runup-status, #who-title {
+  #who-title {
     animation: none;
     opacity: 1;
     transform: none;
-    width: auto;
   }
 }
 
