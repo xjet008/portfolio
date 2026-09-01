@@ -84,7 +84,7 @@ function loop(now) {
 }
 
 function popup(html) {
-  toast.innerHTML = html;
+  toast.innerHTML = "// " + html;
   toast.classList.remove("show");
   void toast.offsetWidth;
   toast.classList.add("show");
