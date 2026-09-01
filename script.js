@@ -11,8 +11,12 @@ const DEBRIS = ["/", "\\", "*", "+", "-", "#"];
 const broken = new Map();
 const tabs = [...document.querySelectorAll(".tab")];
 const sections = ["who", "story", "school"].map((id) => document.getElementById(id));
+const whoTitle = document.getElementById("who-title");
+const whoSecret = document.getElementById("who-secret");
 let cols = 80, rows = 50, t = 0, dirty = true;
 let toastTimer;
+let whoSecretTimer;
+let whoClicks = [];
 
 function sizeGrid() {
   const main = document.querySelector(".main");
@@ -160,6 +164,37 @@ window.addEventListener("click", (e) => {
   shatter(e.clientX, e.clientY);
   popup("Come Fly With Me");
 });
+
+if (whoTitle && whoSecret) {
+  const triggerWhoEgg = () => {
+    whoTitle.classList.remove("jet-nudge");
+    void whoTitle.offsetWidth;
+    whoTitle.classList.add("jet-nudge");
+    whoSecret.classList.add("on");
+    clearTimeout(whoSecretTimer);
+    whoSecretTimer = setTimeout(() => {
+      whoSecret.classList.remove("on");
+    }, 2200);
+  };
+
+  whoTitle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const now = performance.now();
+    whoClicks = whoClicks.filter((ts) => now - ts < 1500);
+    whoClicks.push(now);
+    if (whoClicks.length >= 3) {
+      whoClicks = [];
+      triggerWhoEgg();
+    }
+  });
+
+  whoTitle.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      whoTitle.click();
+    }
+  });
+}
 
 sizeGrid();
 requestAnimationFrame(loop);
