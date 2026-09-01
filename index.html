@@ -3,161 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jet — Web3, since 2019</title>
-  <meta name="description" content="Jet. Started with BCH in 2019. Mining, nodes, L1s and L2s, Linux and hardware. Quiet work in Discord, curiosity first." />
-  <meta name="theme-color" content="#07080a" />
+  <title>jet.js — since 2019</title>
+  <meta name="description" content="Jet. Crypto since 2019. Trading, mining, nodes, Linux, quiet Discord work." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="orb orb-a" aria-hidden="true"></div>
-  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="chrome">
+    <div class="tabs">
+      <span class="tab active">jet.js</span>
+      <span class="tab ghost">readme.md</span>
+    </div>
+    <div class="chrome-actions">
+      <button type="button" id="theme" aria-label="Toggle theme">☼</button>
+    </div>
+  </div>
 
-  <header class="nav">
-    <a class="mark" href="#top">JET<span>.</span></a>
-    <nav>
-      <a href="#story">Story</a>
-      <a href="#path">Path</a>
-      <a href="#ecosystems">Ecosystems</a>
-      <a href="#contact" class="nav-cta">Say hi</a>
-    </nav>
-  </header>
+  <div class="workspace">
+    <aside class="gutter" id="gutter" aria-hidden="true"></aside>
+    <div class="canvas">
+      <pre class="ascii" id="ascii" aria-hidden="true"></pre>
 
-  <main id="top">
-    <section class="hero">
-      <p class="kicker"><span class="pulse"></span> In it since 2019</p>
-      <h1>I got curious about crypto. Then I never really left.</h1>
-      <p class="lede">
-        Jet — Rawalpindi. Trader first, then miner, then the person in Discord running nodes on whatever hardware was lying around.
-        Not a pitch. Just how I actually spent the last years.
-      </p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#story">Read the intro</a>
-        <a class="btn ghost" href="https://x.com/xjet008" target="_blank" rel="noopener">@xjet008</a>
-      </div>
-      <dl class="stats">
-        <div><dt>Started</dt><dd>2019 · BCH</dd></div>
-        <div><dt>Based</dt><dd>Rawalpindi, PK</dd></div>
-        <div><dt>Mode</dt><dd>Low-key, Discord-first</dd></div>
-      </dl>
-    </section>
+      <section class="hero">
+        <h1>On-chain since<br />twenty nineteen</h1>
+        <p class="sub">trader / miner / node runner</p>
+      </section>
 
-    <section id="story" class="section story">
-      <div class="section-head">
-        <p class="kicker">Intro</p>
-        <h2>Hands dirty. Timeline quiet.</h2>
-      </div>
-      <div class="prose wide">
+      <div class="wordmark" aria-hidden="true">Jet</div>
+
+      <article class="block" id="story">
+        <p class="cmt">// intro</p>
         <p>I started my crypto and Web3 journey back in 2019 when I first started trading BCH. At that time I was mostly just curious. I wanted to see how all of this worked.</p>
         <p>Later I started mining different coins like Monero, Cardano, and a few others — mostly for fun, and to learn how mining actually works. From there I slowly got deeper into Web3 and started exploring different projects and ecosystems.</p>
         <p>I participated in projects like Monad, Movement, Story Protocol, Xion, 0G Labs, ZetaChain, Omni Network, Plume, and a lot of other L1s and L2s whose names I probably don’t even remember anymore.</p>
-        <p>I’ve also spent a lot of time on the technical side. I’ve run different types of nodes, including verifier and validator nodes, and tested nodes on pretty much every kind of hardware I could get my hands on. Old PCs, laptops, dedicated machines, servers, shared hardware setups — if I had access to the hardware, I probably tried running something on it.</p>
-        <p>Most of this was done on Linux. I’ve spent a lot of time messing around with servers, configurations, storage, networking, and different infrastructure setups just to see what works and understand how everything actually runs.</p>
-        <p>Most of my activity has been pretty low-key and happens on Discord. I’m not really the type to post about everything I do on CT. A lot of the things I’ve explored, tested, or worked on have just been happening quietly in different communities.</p>
-        <p>Basically I’ve done a bit of everything over the years — trading, mining, running nodes, testing hardware, Linux and servers, experimenting with infrastructure, and exploring all kinds of L1 and L2 ecosystems.</p>
-        <p>For me it was always more about curiosity and learning. I wanted to explore Web3 properly, understand how things work behind the scenes, and get my hands dirty instead of only watching from the outside.</p>
-      </div>
-    </section>
+        <p>I’ve run verifier and validator nodes on pretty much every kind of hardware I could get my hands on. Old PCs, laptops, dedicated machines, servers, shared setups — if I had access to the hardware, I probably tried running something on it.</p>
+        <p>Most of this was done on Linux. Servers, configs, storage, networking. Quiet work, mostly in Discord. I’m not the type to post everything on CT.</p>
+        <p>Trading, mining, nodes, hardware, infrastructure, L1s and L2s. Curiosity first. Hands dirty. Watching from the outside was never enough.</p>
+      </article>
 
-    <section id="path" class="section">
-      <div class="section-head">
-        <p class="kicker">The path</p>
-        <h2>How it unfolded.</h2>
-      </div>
-      <ol class="timeline">
-        <li>
-          <span>2019</span>
-          <div>
-            <h3>Trading BCH</h3>
-            <p>First contact. Curiosity, charts, and the question of how this whole thing actually worked.</p>
-          </div>
-        </li>
-        <li>
-          <span>After that</span>
-          <div>
-            <h3>Mining for real understanding</h3>
-            <p>Monero, Cardano, and others. Not as a business plan — as a way to feel how blocks get made.</p>
-          </div>
-        </li>
-        <li>
-          <span>Then</span>
-          <div>
-            <h3>Nodes on whatever I had</h3>
-            <p>Verifier and validator nodes. Old PCs, laptops, dedicated boxes, servers, shared hardware. Linux all the way down.</p>
-          </div>
-        </li>
-        <li>
-          <span>Quietly</span>
-          <div>
-            <h3>Ecosystems, not timelines</h3>
-            <p>L1s and L2s, Discord rooms, infrastructure experiments. Less CT. More terminals and testnets.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
+      <section class="block">
+        <p class="cmt">// path</p>
+        <ul class="path">
+          <li><span>2019</span> traded BCH, tried to understand the machine</li>
+          <li><span>next</span> mined Monero, Cardano, and whatever else would teach me</li>
+          <li><span>then</span> ran verifier and validator nodes on leftover hardware</li>
+          <li><span>still</span> live in Discord more than on the timeline</li>
+        </ul>
+      </section>
 
-    <section id="ecosystems" class="section">
-      <div class="section-head">
-        <p class="kicker">Ecosystems</p>
-        <h2>Places I showed up.</h2>
-      </div>
-      <ul class="stack">
-        <li>Monad</li>
-        <li>Movement</li>
-        <li>Story Protocol</li>
-        <li>Xion</li>
-        <li>0G Labs</li>
-        <li>ZetaChain</li>
-        <li>Omni Network</li>
-        <li>Plume</li>
-        <li>Plenty of other L1s & L2s</li>
-      </ul>
-      <p class="aside">Plus mining: Monero, Cardano, and a few more. Plus whatever chain needed a node that week.</p>
-    </section>
+      <section class="block">
+        <p class="cmt">// ecosystems</p>
+        <p class="chips">Monad &nbsp; Movement &nbsp; Story Protocol &nbsp; Xion &nbsp; 0G Labs &nbsp; ZetaChain &nbsp; Omni Network &nbsp; Plume &nbsp; and other L1s / L2s</p>
+      </section>
 
-    <section class="section">
-      <div class="section-head">
-        <p class="kicker">What I actually do</p>
-        <h2>Not a job title. A habit.</h2>
-      </div>
-      <div class="grid habits">
-        <article class="project">
-          <h3>Trade</h3>
-          <p>Where it started. Still how I stay close to the market instead of only the docs.</p>
-        </article>
-        <article class="project">
-          <h3>Mine</h3>
-          <p>Learned the physical side of networks — power, hardware, patience.</p>
-        </article>
-        <article class="project">
-          <h3>Run nodes</h3>
-          <p>Validators, verifiers, test setups. If the machine could boot Linux, it got a job.</p>
-        </article>
-        <article class="project">
-          <h3>Touch infra</h3>
-          <p>Servers, storage, networking, configs. Figuring out what actually stays up.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <p class="kicker">Around</p>
-      <h2>Find me where I already am.</h2>
-      <p class="lede">Most of the real conversation still happens in Discord. X is the public door.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="https://x.com/xjet008" target="_blank" rel="noopener">@xjet008 on X</a>
-        <a class="btn ghost" href="https://github.com/xjet008" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>© <span id="year"></span> Jet</span>
-    <span>Curiosity first. CT later — if ever.</span>
-  </footer>
+      <section class="block contact">
+        <p class="cmt">// around</p>
+        <p>
+          <a href="https://x.com/xjet008" target="_blank" rel="noopener">x.com/xjet008</a>
+          <span class="sep">/</span>
+          <a href="https://github.com/xjet008" target="_blank" rel="noopener">github.com/xjet008</a>
+        </p>
+      </section>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
