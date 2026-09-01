@@ -15,6 +15,8 @@ const sections = ["who", "story", "school", "currently", "wallets"].map((id) => 
 const whoTitle = document.getElementById("who-title");
 const jetTrigger = document.getElementById("jet-trigger");
 const dontClick = document.getElementById("dont-click");
+const replayClick = document.getElementById("replay-click");
+let clickRound = 0;
 let cols = 80, rows = 50, t = 0, dirty = true;
 let toastTimer;
 
@@ -171,11 +173,20 @@ window.addEventListener("scroll", () => {
   if (current !== "story") setActiveYearChip(null);
 }, { passive: true });
 
-// Don't-click button: reveal the reply, then disappear.
+// Don't-click button: each replay gets a new reply, then disappears.
 dontClick.addEventListener("click", (e) => {
   e.stopPropagation();
-  dontClick.textContent = "I knew it";
+  dontClick.textContent = clickRound === 0 ? "I knew it" : "PLEASE DON'T";
+  clickRound += 1;
   dontClick.classList.add("is-gone");
+  replayClick.classList.add("is-visible");
+});
+
+replayClick.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dontClick.textContent = "DON'T CLICK";
+  dontClick.classList.remove("is-gone");
+  replayClick.classList.remove("is-visible");
 });
 
 // Jet popup

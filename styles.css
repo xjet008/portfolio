@@ -220,11 +220,15 @@ body {
   color: var(--mute);
 }
 
-.dont-click {
+.click-controls {
   position: absolute;
   top: 1rem;
   right: 3vw;
   z-index: 3;
+}
+
+.dont-click {
+  position: relative;
   margin: 0;
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--mute);
@@ -246,6 +250,28 @@ body {
   opacity: 0;
   transform: translateY(-5px);
   pointer-events: none;
+}
+
+.replay-click {
+  display: none;
+  margin-left: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--mute);
+  background: transparent;
+  color: var(--mute);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.replay-click.is-visible {
+  display: inline-block;
+}
+
+.replay-click:hover {
+  border-color: var(--head);
+  color: var(--head);
 }
 
 h1 {
