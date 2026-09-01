@@ -86,22 +86,11 @@ function loop(now) {
 }
 
 function asCode(html) {
-  const hold = document.createElement("div");
-  hold.innerHTML = html;
-  const plain = hold.textContent.trim();
-  const width = Math.max(plain.length + 8, 26);
-  const bar = "+" + "-".repeat(width) + "+";
-  const gap = " ".repeat(Math.max(0, width - plain.length - 6));
-  return (
-    "<pre>" +
-    bar + "\n" +
-    "| // " + html + gap + "|\n" +
-    bar +
-    "</pre>"
-  );
+  return "<pre>" + html + "</pre>";
 }
 
-function popup(html) {
+function popup(html, duration = 1000) {
+  toast.style.setProperty("--popup-duration", duration + "ms");
   toast.innerHTML = asCode(html);
   toast.classList.remove("show");
   void toast.offsetWidth;
@@ -111,7 +100,7 @@ function popup(html) {
   toastTimer = setTimeout(() => {
     toast.classList.remove("show");
     dim.classList.remove("on");
-  }, 1000);
+  }, duration);
 }
 
 function setTab(id) {
@@ -142,7 +131,7 @@ window.addEventListener("scroll", () => {
 document.querySelectorAll(".prompt").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    popup(btn.dataset.html || btn.dataset.msg);
+    popup(btn.dataset.html || btn.dataset.msg, Number(btn.dataset.duration) || 1000);
   });
 });
 

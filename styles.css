@@ -72,13 +72,8 @@ body {
   left: 50%;
   top: 44%;
   transform: translate(-50%, -50%) scale(0.92);
-  width: auto;
   max-width: min(90vw, 56ch);
-  background: rgba(20, 18, 16, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-  padding: 1rem 1.1rem;
+  padding: 1rem;
   color: #ececec;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-weight: 400;
@@ -99,7 +94,7 @@ body {
 }
 
 .toast.show {
-  animation: modalPop 0.38s cubic-bezier(.2, .9, .2, 1) both;
+  animation: popupFade var(--popup-duration, 1s) ease both;
   pointer-events: auto;
 }
 
@@ -107,15 +102,20 @@ body {
   color: #ffffff;
 }
 
-@keyframes modalPop {
+@keyframes popupFade {
   0% {
     opacity: 0;
-    transform: translate(-50%, -44%) scale(0.84);
+    transform: translate(-50%, -46%);
+  }
+
+  18%, 78% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 
   100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transform: translate(-50%, -50%);
   }
 }
 
