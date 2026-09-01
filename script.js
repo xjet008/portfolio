@@ -14,6 +14,7 @@ const yearChips = [...document.querySelectorAll(".year-chip")];
 const sections = ["who", "story", "school", "currently", "wallets"].map((id) => document.getElementById(id));
 const whoTitle = document.getElementById("who-title");
 const jetTrigger = document.getElementById("jet-trigger");
+const dontClick = document.getElementById("dont-click");
 let cols = 80, rows = 50, t = 0, dirty = true;
 let toastTimer;
 
@@ -169,6 +170,13 @@ window.addEventListener("scroll", () => {
   // resurrect an old year highlight.
   if (current !== "story") setActiveYearChip(null);
 }, { passive: true });
+
+// Don't-click button: reveal the reply, then disappear.
+dontClick.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dontClick.textContent = "I knew it";
+  dontClick.classList.add("is-gone");
+});
 
 // Jet popup
 jetTrigger.addEventListener("click", (e) => {
