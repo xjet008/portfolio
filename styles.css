@@ -351,20 +351,31 @@ h1 {
 
 .rail {
   position: fixed;
-
   right: 2.5vw;
   top: 40%;
-
   transform: translateY(-20%);
-
   z-index: 36;
 
   width: 220px;
 
   display: flex;
   flex-direction: column;
+  gap: 1.7rem;
+}
 
-  gap: 1.6rem;
+.prompt-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.prompt-box p {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--mute);
+  margin: 0;
 }
 
 .prompt {
@@ -372,14 +383,11 @@ h1 {
   border: 0;
   padding: 0;
 
-  text-align: left;
-
   font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  line-height: 1.4;
 
-  font-size: 13px;
-  line-height: 1.55;
-
-  color: var(--mute);
+  color: var(--ink);
 
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -392,19 +400,16 @@ h1 {
 }
 
 .prompt:hover {
-  color: var(--ink);
-  transform: translateX(-3px);
+  color: var(--head);
+  transform: translateX(3px);
 }
 
 .thanks {
   font-family: "IBM Plex Mono", monospace;
-
   font-size: 11px;
   line-height: 1.5;
-
   color: #6f6f6f;
 }
-
 
 /* JET BACKGROUND MARK */
 
