@@ -256,6 +256,29 @@ h1 {
   margin-bottom: 0.7rem;
 }
 
+.who-egg-wrap {
+  margin-top: -0.2rem;
+}
+
+.who-egg {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--mute);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.who-egg:hover {
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
 .close {
   font-family: Syne, sans-serif;
   font-weight: 700;
