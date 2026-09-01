@@ -3,45 +3,475 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#101311" />
-  <title>jet.js | terminal portfolio</title>
+  <title>jet.js | fun is fuel</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="dim" id="dim"></div>
+  <div class="toast" id="toast" aria-live="polite"></div>
+
   <header class="chrome">
-    <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="window-title">jet@portfolio:~</div>
-    <nav class="tabs" aria-label="Terminal sections">
-      <a class="tab on" href="#whoami">whoami</a>
+    <nav class="tabs">
+      <a class="tab on" href="#who">who.js</a>
       <a class="tab" href="#story">story.md</a>
-      <a class="tab" href="#school">school.md</a>
+      <a class="tab" href="#school">school.txt</a>
     </nav>
-    <button type="button" id="theme" aria-label="Toggle light theme">◐</button>
+
+    <div class="acts">
+      <a
+        class="ethos"
+        href="https://app.ethos.network/profile/x/xjet008"
+        target="_blank"
+        rel="noopener"
+      >
+        verified human on Ethos
+      </a>
+
+      <button type="button" id="theme" aria-label="theme">☼</button>
+    </div>
   </header>
+
+
   <div class="page">
-    <aside class="gutter" id="gutter" aria-hidden="true"></aside>
+
+    <aside class="gutter" id="gutter"></aside>
+
     <main class="main">
-      <section class="hero">
-        <p class="eyebrow">interactive profile / v1.0.26</p>
-        <h1>jet<span class="cursor-block">_</span></h1>
-        <p class="intro">A terminal that keeps executing as you scroll.<br />No dashboard. No noise. Just the story.</p>
-        <p class="scroll-hint"><span>↓</span> scroll to execute</p>
+
+      <pre class="ascii" id="ascii"></pre>
+
+      <p class="hook">
+        If you are dragging the mouse just to watch this page break,
+        congratulations. We already have something in common.
+      </p>
+
+      <div class="who-intro" id="who-intro">
+        <h1 id="who-title" tabindex="0" role="button" aria-label="So... who is Jet?">So... who is Jet?</h1>
+      </div>
+      <section class="copy" id="who">
+
+        <p class="label">// who</p>
+
+        <p>
+          Just call me Jet.
+          Not a philosophy.
+          It is the <em>COMEFLYWITHME</em> cheat from GTA Vice City.
+          Still better than using my real name.
+        </p>
+
+        <p>
+          I live in Attock, Pakistan.
+          If you bump into me in Web3, I did not show up for a yacht.
+          I showed up because I got curious.
+        </p>
+
+        <p>
+          And bored.
+          Occasionally both.
+        </p>
+
+        <p>
+          I am a verified human on Ethos.
+          I take projects seriously and myself not at all.
+        </p>
+
+        <p>
+          People who know me say I keep things chill when a chat gets tense,
+          help newcomers, and somehow keep everyone laughing.
+        </p>
+
+        <p>
+          Talented?
+          I will let the allegations continue.
+        </p>
+
+        <p>
+          <strong>Operating system:</strong>
+          I forget important things and remember completely useless shit.
+        </p>
+
       </section>
-      <section class="terminal-shell" aria-label="Jet portfolio terminal">
-        <div class="terminal-bar"><span>bash</span><span id="progress">0%</span></div>
-        <div id="terminal" class="terminal" tabindex="0" aria-live="polite"></div>
-        <div class="terminal-end"><span class="prompt-mark">jet@portfolio:~$</span><span class="blink">█</span></div>
+
+
+      <section class="copy" id="story">
+
+        <p class="label">// story</p>
+
+        <p>
+          I started in 2019 with Bitcoin Cash, or BCH, because I was nosy.
+        </p>
+
+        <p>
+          I was never really a trader.
+          Please do not send me charts.
+          They put me to sleep.
+        </p>
+
+        <p>
+          I would rather scroll on X, spam emojis in Discord,
+          break a Linux box, or reread a document I will forget by morning.
+        </p>
+
+        <p>
+          Then I started mining Monero, Cardano, and a few other coins.
+          Not because I had some master plan.
+          I just wanted to see how blocks actually get made.
+        </p>
+
+        <p>
+          Also wanted to know why my machine sounded like it was
+          preparing for takeoff.
+        </p>
+
+        <p>
+          That curiosity eventually turned into nodes.
+        </p>
+
+        <p>
+          Verifier nodes.
+          Validator nodes.
+          Testnets.
+          Whatever I could get my hands on.
+        </p>
+
+        <p>
+          Old PCs.
+          Laptops.
+          Dedicated boxes.
+          Servers.
+          Shared hardware.
+        </p>
+
+        <p>
+          If it booted Linux, it got a job.
+        </p>
+
+        <p>
+          If it did not...
+        </p>
+
+        <p>
+          I yelled at it.
+        </p>
+
+        <p>
+          Sometimes I spam <em>gib wl gib wl</em> into Discord
+          when I am trying to secure an NFT GTD or whitelist.
+        </p>
+
+        <p>
+          Not because I am some hardcore NFT collector.
+          I am really not.
+        </p>
+
+        <p>
+          I just like seeing whether I can secure the spot.
+        </p>
+
+        <p>
+          Priorities.
+        </p>
+
+        <p>
+          Over the years, that rabbit hole took me through
+          a ridiculous number of Web3 projects and ecosystems.
+        </p>
+
+        <p>
+          Monad.
+          Hooked Protocol.
+          Gaia
+          Node Ops
+          Movement.
+          Story Protocol.
+          XION.
+          0G Labs.
+          ZetaChain.
+          Omni Network.
+          Plume.
+        </p>
+
+        <p>
+          Plus a long list of L1s, L2s, testnets, and random things
+          I will probably remember at 3 AM when I am supposed to be sleeping.
+        </p>
+
+        <p>
+          I have tested networks, run nodes, played with different hardware,
+          explored infrastructure, helped people in communities,
+          and generally followed whatever looked interesting enough
+          to ruin my sleep schedule.
+        </p>
+
+        <p>
+          Most of it never hits CT.
+        </p>
+
+        <p>
+          I am more of a low-key Discord guy.
+        </p>
+
+        <p>
+          I find a project that interests me.
+          I get curious.
+          Then I go all in.
+        </p>
+
+        <p>
+          I test it.
+          I explore it.
+          I run things.
+          I help people.
+          I break something.
+          I fix it.
+          I figure out how it works.
+        </p>
+
+        <p>
+          Then I find another rabbit hole.
+        </p>
+
+        <p>
+          That is pretty much the loop.
+        </p>
+
+        <p>
+          <strong>
+            See something interesting.
+            Join the Discord.
+            Break it.
+            Fix it.
+            Forget it.
+            Start again.
+          </strong>
+        </p>
+
+        <p>
+          No JPEG vault here.
+          I am not really an NFT collector.
+        </p>
+
+        <p>
+          But if holding something helps me stay at zero,
+          sure, I will hold it.
+        </p>
+
+        <p>
+          Makes perfect financial sense.
+        </p>
+
+        <p>
+          Probably.
+        </p>
+
+        <p>
+          <strong>Fun is the fuel.</strong>
+          Profit is a rumor.
+        </p>
+
       </section>
-      <footer class="footer">
-        <span>EOF // curiosity is the engine</span>
-        <div class="links"><a href="https://x.com/xjet008" target="_blank" rel="noopener">x.com</a><a href="https://github.com/xjet008" target="_blank" rel="noopener">github</a><a href="https://app.ethos.network/profile/x/xjet008" target="_blank" rel="noopener">ethos</a></div>
-      </footer>
-    </main>
+
+
+      <section class="copy" id="school">
+
+        <p class="label">// school</p>
+
+        <p>
+          Secondary Education, Computer Science, 2019.
+        </p>
+
+        <p>
+          Higher Secondary ICS, Computer Science, 2021.
+        </p>
+
+        <p>
+          Then came a five-year gap.
+        </p>
+
+        <p>
+          On paper, it looks empty.
+        </p>
+
+        <p>
+          It was not exactly empty.
+        </p>
+
+        <p>
+          There were chains.
+          Discord.
+          Linux.
+          Servers.
+          Nodes.
+          Testing hardware.
+          Checking whether a node was still alive.
+        </p>
+
+        <p>
+          Reading docs.
+          Forgetting the docs.
+          Reading them again.
+        </p>
+
+        <p>
+          Saying "I will do it tomorrow"
+          and somehow making tomorrow a long-term strategy.
+        </p>
+
+        <p>
+          Then 2026 showed up.
+        </p>
+
+        <p>
+          Now I am a Virtual University student studying BBA.
+        </p>
+
+        <p>
+          After years of computers, infrastructure, servers,
+          nodes and Web3, Business Administration seemed like
+          the obvious next move.
+        </p>
+
+        <p>
+          Makes perfect sense.
+        </p>
+
+        <p>
+          Probably.
+        </p>
+
+        <p>
+          I guess after spending years figuring out how things work,
+          I decided it was time to learn how businesses work too.
+        </p>
+
+        <p class="close">
+          Curiosity is the engine.
+          Everything else is a side quest.
+        </p>
+
+        <p class="links">
+
+          <a
+            href="https://app.ethos.network/profile/x/xjet008"
+            target="_blank"
+            rel="noopener"
+          >
+            Ethos
+          </a>
+
+          <a
+            href="https://x.com/xjet008"
+            target="_blank"
+            rel="noopener"
+          >
+            x.com/xjet008
+          </a>
+
+          <a
+            href="https://discordapp.com/users/702583551677300737"
+            target="_blank"
+            rel="noopener"
+          >
+            discord profile
+          </a>
+
+          <a
+            href="https://github.com/xjet008"
+            target="_blank"
+            rel="noopener"
+          >
+            github
+          </a>
+
+        </p>
+
+        <div class="wallets" aria-label="Wallet addresses">
+          <p class="wallet-title">wallets</p>
+          <p><span>EVM</span> 0x89E669616DF9a216C32C8608B6B6fa1F427c436e</p>
+          <p><span>SOL</span> 7WfbT78FWSkBv5f5ypw4LKCq2vr9qvqfwB2y47BhG6oB</p>
+        </div>
+
+      </section>
+
+
+    <aside class="rail">
+
+  <div class="prompt-box">
+    <p>If you are in a NFT project team</p>
+    <button
+      type="button"
+  class="prompt"
+  data-duration="3000"
+  data-msg="gib whitelist hehe :)"
+    >
+      click here
+    </button>
   </div>
+
+  <div class="prompt-box">
+    <p>If you are in a Crypto project team</p>
+    <button
+      type="button"
+  class="prompt"
+  data-duration="3000"
+  data-msg="gib allocation hehe :)"
+    >
+      click here
+    </button>
+  </div>
+
+  <div class="prompt-box">
+    <p>If you are interested in hiring a retard MOD/CM</p>
+    <button
+      type="button"
+  class="prompt"
+  data-duration="3000"
+  data-html="Contact me on X | <a href='https://x.com/xjet008' target='_blank' rel='noopener'>JET's Profile</a> :)"
+    >
+      click here
+    </button>
+  </div>
+
+  <div class="prompt-box">
+    <p>If you are none of them</p>
+    <button
+      type="button"
+      class="prompt"
+      data-duration="3000"
+      data-html="Go back and follow me on X | <a href='https://x.com/xjet008' target='_blank' rel='noopener'>JET's Profile</a> :D"
+    >
+      click here
+    </button>
+  </div>
+
+  <p class="thanks">
+    Thanks for your attention to this matter.
+  </p>
+
+      </aside>
+
+
+      <div class="mark" aria-hidden="true">
+        Jet
+      </div>
+
+    </main>
+
+  </div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
