@@ -1,7 +1,7 @@
 const ascii = document.getElementById("ascii");
 const gutter = document.getElementById("gutter");
 const cursor = document.getElementById("cursor");
-const gib = document.getElementById("gib");
+const toast = document.getElementById("toast");
 const CELL_W = 7.3;
 const CELL_H = 20;
 const A = "JET";
@@ -11,6 +11,7 @@ const broken = new Map();
 const tabs = [...document.querySelectorAll(".tab")];
 const sections = ["who", "story", "school"].map((id) => document.getElementById(id));
 let cols = 80, rows = 50, t = 0, dirty = true;
+let toastTimer;
 
 function sizeGrid() {
   const main = document.querySelector(".main");
@@ -81,6 +82,15 @@ function loop(now) {
   requestAnimationFrame(loop);
 }
 
+function popup(html) {
+  toast.innerHTML = html;
+  toast.classList.remove("show");
+  void toast.offsetWidth;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
 function setTab(id) {
   tabs.forEach((tab) => tab.classList.toggle("on", tab.getAttribute("href") === "#" + id));
 }
@@ -93,8 +103,7 @@ tabs.forEach((tab) => {
     const el = document.getElementById(id);
     if (!el) return;
     setTab(id);
-    const top = el.getBoundingClientRect().top + window.scrollY - 52;
-    window.scrollTo({ top, behavior: "smooth" });
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 52, behavior: "smooth" });
   });
 });
 
@@ -107,24 +116,30 @@ window.addEventListener("scroll", () => {
   setTab(current);
 }, { passive: true });
 
+document.querySelectorAll(".prompt").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popup(btn.dataset.html || btn.dataset.msg);
+  });
+});
+
 document.getElementById("theme").addEventListener("click", (e) => {
   e.stopPropagation();
   document.documentElement.classList.toggle("light");
 });
+
 window.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
   shatter(e.clientX, e.clientY);
 });
+
 window.addEventListener("click", (e) => {
-  if (e.target.closest("a,button")) return;
+  if (e.target.closest("a,button,.toast")) return;
   shatter(e.clientX, e.clientY);
-  if (Math.random() > 0.3) {
-    gib.classList.remove("show");
-    void gib.offsetWidth;
-    gib.classList.add("show");
-  }
+  popup("Come Fly With Me");
 });
+
 sizeGrid();
 requestAnimationFrame(loop);
 window.addEventListener("resize", sizeGrid);
